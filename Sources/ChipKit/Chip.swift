@@ -71,3 +71,10 @@ extension Chip {
         }
     }
 }
+
+// MARK: - Sequence+Chip
+
+extension Sequence where Element == Chip {
+    /// The combined value of all `Chip` instances in the sequence.
+    public var summedChipValues: Int { map { $0.value }.reduce(0, +) }
+}
